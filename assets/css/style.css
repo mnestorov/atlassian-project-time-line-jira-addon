@@ -1,0 +1,525 @@
+/*
+ ====================================================
+ Description: Landing page for Project TimeLine for JIRA Software - addon.
+ Developed by: Martin Nestorov - web developer @ Nemetschek Bulgaria
+ Website: https://www.nemetschek.bg
+ Date: 19.01.2018
+ Version: 0.1
+ ====================================================
+ */
+
+/**
+ * MOBILE STYLES
+ */
+
+@import "responsive.css";
+
+/**
+ * HELPERS
+ */
+
+p {
+	color: rgba(0,0,0,.8);
+}
+
+p.green-text {
+	color: #4FBFA5;
+	font-weight: bold;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h1, h2 {
+	line-height: 1.5;
+}
+
+.h1, h1 {
+    font-size: 1.79rem;
+}
+
+.h2, h2 {
+    font-size: 1.7rem;
+    color: #0747A6;
+}
+
+.center {
+	text-align: center;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.pb-4, .py-4 {
+    padding-bottom: 1.5rem !important;
+}
+
+/** 
+ * BUTTONS 
+ */
+
+.btn {
+	width: 100%;
+    padding: .375rem 1.5rem;
+    border-radius: 1.85rem;
+}
+
+.btn.fixed {
+    max-width: 280px;
+    padding: .4rem 0;
+    border-radius: 2.3rem;
+}
+
+.btn-light {
+    color: #4FBFA5;
+    font-weight: bold;
+}
+
+.btn-light:hover {
+    color: #333333;
+}
+
+.btn-dark,
+button#submit.btn.btn-dark.disabled  {
+	color: #ffffff;
+    background: #4FBFA5;
+    border-color: #4FBFA5;
+    font-weight: bold;
+}
+
+.btn-dark:hover {
+	color: #333333;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+button[type="submit"] {
+	width: 150px;
+	float: right;
+	cursor: pointer;
+}
+
+button#submit.btn.btn-dark.disabled {
+    cursor: not-allowed;
+}
+
+/* BUTTONS: Call To Actions  */
+
+ul.ctn, ul.text-ctn {
+    list-style-type: none;
+    margin: 10px 0 -10px;
+    padding: 0;
+    float: right;
+    clear: both;
+}
+
+ul.ctn li, ul.text-ctn li {
+	margin: 0 0 40px;
+}
+
+ul.text-ctn li a {
+	font-weight: 400;
+}
+
+/** 
+ * BACKGROUNDS
+ */
+
+.bg-light {
+    background-color: #EBEDED !important;
+}
+
+.bg-green {
+    background-color: #4FBFA5 !important;
+}
+
+.bg-blue {
+    background-color: #0747A6 !important;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.bg-gray {
+    background-color: #222222 !important;
+}
+
+/** 
+ * NAVIGATION
+ */
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+nav.navbar.navbar-light.bg-white {
+    margin-top: 72px;
+    /*  For the second nav menu -  If .fixed-top is on. */
+}
+
+img.logo {
+    vertical-align: middle;
+    border-style: none;
+    margin: -10px;
+}
+
+ul.contact > img.logo {
+    vertical-align: middle;
+    border-style: none;
+    margin: -10px -20px;
+}
+
+.navbar-dark .navbar-toggler {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-toggler {
+    padding: 0;
+    font-size: 1.25rem;
+    line-height: 1;
+    background: 0 0;
+    border: none;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.8);
+    font-weight: bold;
+}
+
+/* NAVIGATION: Search Input */
+
+.search-form .form-group {
+  	float: left !important;
+  	transition: all 0.35s, border-radius 0s;
+  	width: 32px;
+  	height: 32px;
+  	background: transparent;
+}
+
+.search-form .form-group input.form-control {
+  	padding-left: 30px;
+  	box-shadow: none;
+  	display: block;
+}
+
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  	display: none;
+}
+
+.search-form .form-group input.form-control:-moz-placeholder {
+  	/* Firefox 18- */
+  	display: none;
+}
+
+.search-form .form-group input.form-control::-moz-placeholder {
+  	/* Firefox 19+ */
+  	display: none;
+}
+
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  	display: none;
+}
+
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  	width: 100%;
+}
+
+.search-form .form-group span.form-control-feedback {
+    position: relative;
+    top: -2.6em;
+    left: .6em;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: left;
+    color: rgba(0,0,0,.8);
+    font-size: 14px;
+    background: transparent;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    margin-top: .4rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(0,0,0,.8);
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+	outline: 2px solid #0747A6;
+}
+
+/**
+ * BREADCRUMB
+ */
+
+.breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 1.3rem 1rem;
+    margin-bottom: 0;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: 0;
+}
+
+a {
+    color: #0747A6;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+span.breadcrumb-item.active {
+	color: rgba(0,0,0,.8);
+}
+
+/** 
+ * SECTIONS
+ */
+
+header {
+  	margin: 25px 0 0;
+}
+
+header.bg-white.text-white img {
+	width: 100%;
+}
+
+section {
+  	padding: 50px 0;
+}
+
+section#first {
+    padding: 30px 0 0;
+}
+
+section#testing {
+    padding: 55px 0 0;
+}
+
+section#testing picture img {
+    width: 180px;
+}
+
+section#roadmap {
+	padding: 0 0 50px;
+}
+
+section#partners {
+	padding: 25px 0 0;
+}
+
+.section-divider {
+    padding: 20px 0;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    box-shadow: 
+        inset 0px 10px 5px -8px #E9E9E9,
+        inset 0px -10px 5px -8px #E9E9E9;
+}
+
+/** 
+ * NAV TABS 
+ */
+
+.nav-tabs { 
+    border-bottom: none; 
+}
+
+.nav-tabs .nav-link {
+    border: none !important;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#nav-home-tab.nav-item.nav-link {
+    width: 33.333%;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0;
+    color: #495057;
+}
+
+#nav-home-tab.nav-item.nav-link.active,
+#nav-home-tab.nav-item.nav-link:focus {
+    background: #C0E3EC;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+#nav-home-tab.nav-item.nav-link.active > span,
+#nav-home-tab.nav-item.nav-link:focus > span {
+    display: none;
+}
+
+#nav-profile-tab.nav-item.nav-link {
+    width: 33.333%;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0;
+    color: #495057;
+}
+
+#nav-profile-tab.nav-item.nav-link.active,
+#nav-profile-tab.nav-item.nav-link:focus {
+    background: #FAE3C4;
+    font-weight: bold;
+    padding: 20px 0 0;
+}
+
+#nav-profile-tab.nav-item.nav-link.active > span,
+#nav-profile-tab.nav-item.nav-link:focus > span {
+    display: none;
+}
+
+#nav-contact-tab.nav-item.nav-link {
+    width: 33.333%;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0;
+    color: #495057;
+}
+
+#nav-contact-tab.nav-item.nav-link.active,
+#nav-contact-tab.nav-item.nav-link:focus {
+    background: #AFDDD4;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+#nav-contact-tab.nav-item.nav-link.active > span,
+#nav-contact-tab.nav-item.nav-link:focus > span {
+    display: none;
+}
+
+/* NAV TABS: Extra Divs */
+
+.extraDiv1, .extraDiv2, .extraDiv3 {
+    padding: 10px 35px;
+    font-weight: normal;
+    text-align: left;
+}
+
+/* NAV TABS: Boxes */
+
+.box_one {
+    width: 33.333%;
+    padding: 10px 40px 10px;
+    background: #C0E3EC;
+    float:left;
+}
+
+#nav-home > p {
+    background: #C0E3EC;
+    padding: 25px;
+    clear: both;
+}
+
+#nav-home > p img {
+    width: 100%;
+}
+
+.box_two {
+    width: 33.333%;
+    padding: 10px 40px 10px;
+    margin: 0 auto;
+    background: #FAE3C4;
+}
+
+#nav-profile > p {
+    background: #FAE3C4;
+    padding: 25px;
+    margin-top: -20px;
+}
+
+#nav-profile > p img {
+    width: 100%;
+}
+
+.box_three {
+    width: 33.333%;
+    padding: 10px 40px 10px;
+    background: #AFDDD4;
+    float: right;
+}
+
+#nav-contact > p {
+    background: #AFDDD4;
+    padding: 25px;
+    margin-top: -20px;
+    clear: both;
+}
+
+#nav-contact > p img {
+    width: 100%;
+}
+
+.box_one, .box_two, .box_three {
+    display: none;
+    visibility: hidden;
+}
+
+/** 
+ * FOOTER
+ */
+
+footer {
+    padding: 15px 0 45px;
+}
+
+footer ul li a:hover {
+	text-decoration: underline;
+}
+
+ul.the_company, ul.services, ul.partners, ul.contact {
+    margin: 0;
+    padding: 0;
+}
+
+.the_company span, .services span, .partners span {
+   color: #ffffff; 
+   font-weight: 400; 
+   margin: 0 0 50px;
+   padding: 20px 0 0;
+   display: block;
+   font-size: 16px;
+}
+
+.the_company li, .services li, .partners li, .contact li, .contact li span {
+    margin: 20px 0 -17px;
+    list-style: none;
+}
+
+.the_company li a, .services li a, .partners li a, .contact li a, .contact li span {
+    color: #ACACAC;
+    text-decoration: none;
+}
+
+.contact li a:hover {
+    text-decoration: none;
+}

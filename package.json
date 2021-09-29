@@ -1,0 +1,15 @@
+{
+  "title": "Project TimeLine for JIRA Software - Nemetschek Bulgaria",
+  "name": "project-timeline-for-jira-software-nemetschekbg-html-template",
+  "version": "0.1",
+  "description": "Landing page for Project TimeLine for JIRA Software - addon.",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "jquery": "^3.2.1",
+    "jquery.easing": "^1.4.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.13",
+    "gulp": "^3.9.1"
+  }
+}
