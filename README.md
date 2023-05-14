@@ -1,4 +1,4 @@
-# Atlassian - Project Time Line Jira Addon Landing page
+# Atlassian - Project Time Line Jira Addon Landing Page
 
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 
